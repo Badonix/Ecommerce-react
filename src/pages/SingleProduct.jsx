@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 const SingleProduct = () => {
   const [realData, setRealData] = useState([]);
-  const [cartArray, setCartArray] = useState([]);
   const { productId } = useParams();
   const [counter, setCounter] = useState(1);
-  const { setCartItems, cartItems, cart, setCart } = useGlobalContext();
+  const { cartItems, setCartItems, cart, setCart } = useGlobalContext();
   const [isDisabled, setIsDisabled] = useState(
     cart.includes(parseInt(productId)) ? true : false
   );
@@ -26,7 +25,7 @@ const SingleProduct = () => {
     }
   }
   function decrement() {
-    if (counter != 1 && !isDisabled) {
+    if (counter !== 1 && !isDisabled) {
       setCounter((prevVal) => prevVal - 1);
     }
   }
@@ -64,7 +63,7 @@ const SingleProduct = () => {
   return (
     <section className="section-product">
       <img
-        src={realData.length != 0 ? realData.image : placHolder}
+        src={realData.length !== 0 ? realData.image : placHolder}
         className="single-img"
         alt="zd"
       />

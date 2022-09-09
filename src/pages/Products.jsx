@@ -1,21 +1,27 @@
-import { Link } from "react-router-dom";
-import products from "../data";
+import Item from "../components/Item";
+import { useGlobalContext } from "../context";
 const Products = () => {
+  const { data } = useGlobalContext();
   return (
     <>
-      <section className="section">
-        <h2>Products</h2>
-        <div className="products">
-          {products.map((product) => {
-            return (
-              <article key={product.id}>
-                <h5>{product.name}</h5>
-                <Link to={`/products/${product.id}`}>More info</Link>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+      <div className="rdasd">
+        <section className="popular-section">
+          <h2>All Products</h2>
+          <div className="popular-items-cont">
+            {data.map((item) => {
+              return (
+                <Item
+                  key={item.id}
+                  price={"$" + item.price}
+                  img={item.image}
+                  title={item.category}
+                  id={item.id}
+                />
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </>
   );
 };

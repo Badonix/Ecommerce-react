@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
+import Footer from "../components/Footer";
 function Cart() {
   const { cartItems, setCartItems, setCart } = useGlobalContext();
   const [filteredCart, setFilteredCart] = useState(cartItems);

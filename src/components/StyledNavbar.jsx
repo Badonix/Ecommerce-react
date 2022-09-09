@@ -2,15 +2,17 @@ import { NavLink, Link } from "react-router-dom";
 import logo from "../images/logo.png";
 import { useGlobalContext } from "../context";
 import { FaShoppingCart } from "react-icons/fa";
+import { useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgClose } from "react-icons/cg";
 import { useState } from "react";
 const StyledNavbar = () => {
-  const { cartItems } = useGlobalContext();
+  const { cartItems, setCartItems } = useGlobalContext();
   const [isOn, setIsOn] = useState(false);
   function changeNav() {
     setIsOn((prev) => !prev);
   }
+
   return (
     <nav className="navbar">
       <div className="left">
@@ -37,19 +39,7 @@ const StyledNavbar = () => {
         >
           Home
         </NavLink>
-        <NavLink
-          onClick={changeNav}
-          className="nav-item"
-          style={({ isActive }) => {
-            return {
-              fontWeight: isActive ? "bold" : "",
-              color: isActive ? "rgb(183, 208, 255)" : "",
-            };
-          }}
-          to="/About"
-        >
-          About
-        </NavLink>
+
         <NavLink
           onClick={changeNav}
           className="nav-item"

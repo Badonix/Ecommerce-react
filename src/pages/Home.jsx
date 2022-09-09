@@ -1,5 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 import heroOneImg from "../images/logo.png";
 import Item from "../components/Item";
 import { useGlobalContext } from "../context";

@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+
 const AppContext = React.createContext();
 const URL = "https://fakestoreapi.com/products";
 
 const AppProvider = ({ children }) => {
   const [data, setData] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem("cartItems")) || []
+  );
   const [cart, setCart] = useState([]);
   const fetchData = async (url) => {
     try {
@@ -15,9 +18,13 @@ const AppProvider = ({ children }) => {
       console.log(e.response);
     }
   };
+
   useEffect(() => {
     fetchData(URL);
   }, []);
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <AppContext.Provider

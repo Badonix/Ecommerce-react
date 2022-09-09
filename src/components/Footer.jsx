@@ -1,4 +1,3 @@
-import logo from "../images/logo.png";
 import {
   BsFacebook,
   BsGithub,
@@ -31,16 +30,20 @@ const Footer = () => {
         </div>
         <div className="footer-clm">
           <h3>Socials</h3>
-          <a href="https://www.facebook.com/Nick.Danela" target="_blank">
+          <a
+            rel="noreferrer"
+            href="https://www.facebook.com/Nick.Danela"
+            target="_blank"
+          >
             <BsFacebook />
           </a>
-          <a href="https://github.com/Badonix" target="_blank">
+          <a rel="noreferrer" href="https://github.com/Badonix" target="_blank">
             <BsGithub />
           </a>
-          <a href="https://instagram.com" target="_blank">
+          <a rel="noreferrer" href="https://instagram.com" target="_blank">
             <BsInstagram />
           </a>
-          <a href="https://twitter.com" target="_blank">
+          <a rel="noreferrer" href="https://twitter.com" target="_blank">
             <BsTwitter />
           </a>
         </div>
