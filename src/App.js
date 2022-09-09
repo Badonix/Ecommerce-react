@@ -9,6 +9,7 @@ import SingleProduct from "./pages/SingleProduct";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ScrollToTop from "./components/ScrollToTop";
+import Cart from "./pages/Cart";
 function App() {
   const [user, setUser] = useState(null);
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="products/:productId" element={<SingleProduct />} />
           <Route path="login" element={<Login setUser={setUser} />} />
           <Route path="dashboard" element={<Dashboard user={user} />} />
+          <Route path="cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

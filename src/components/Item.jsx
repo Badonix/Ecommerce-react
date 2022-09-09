@@ -1,4 +1,3 @@
-import stockPhoto from "../images/stock-photo.jfif";
 import { Link } from "react-router-dom";
 const Item = ({ img, title, price, id }) => {
   return (

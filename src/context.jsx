@@ -5,6 +5,8 @@ const URL = "https://fakestoreapi.com/products";
 
 const AppProvider = ({ children }) => {
   const [data, setData] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([]);
   const fetchData = async (url) => {
     try {
       const { data } = await axios.get(url);
@@ -18,7 +20,18 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ data, fetchData, setData }}>
+    <AppContext.Provider
+      value={{
+        cart,
+        setCart,
+        cartItems,
+        cartItems,
+        setCartItems,
+        data,
+        fetchData,
+        setData,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
