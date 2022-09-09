@@ -486,9 +486,9 @@ button a {
   height: 200px;
   transition: 0.8s;
   background-color: white;
-  box-shadow: 2px 2px 73px -12px rgba(174, 174, 174, 0.75);
-  -webkit-box-shadow: 2px 2px 73px -12px rgba(174, 174, 174, 0.75);
-  -moz-box-shadow: 2px 2px 73px -12px rgba(174, 174, 174, 0.75);
+  box-shadow: 2px 2px 73px -12px rgba(174, 174, 174, 0.5);
+  -webkit-box-shadow: 2px 2px 73px -12px rgba(174, 174, 174, 0.5);
+  -moz-box-shadow: 2px 2px 73px -12px rgba(174, 174, 174, 0.5);
 }
 .testimonial h2 {
   font-size: 30px;
@@ -604,4 +604,40 @@ button a {
     width: 100%;
     font-size: 18px;
   }
+}
+.nagdi-footeri {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  flex-wrap: wrap;
+}
+footer .footer-logo {
+  width: 60px;
+}
+footer .top-footer {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.address {
+  display: flex;
+  align-items: center;
+}
+.phone,
+.emaill {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nagdi-footeri svg {
+  margin-right: 5px;
+  color: black;
+}
+.footer-clm {
+  margin: 10px;
 }
